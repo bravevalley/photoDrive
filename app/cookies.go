@@ -35,3 +35,13 @@ func SendCookie(w http.ResponseWriter, r *http.Request, value string) *http.Cook
 
 	return c
 }
+
+
+// SplitAndRetrieve returns a xlice of string after extracting hashed values from the cookie passed in
+func SplitAndRetrieve(cookie string) []string {
+	xs := strings.Split(cookie, "|")
+
+	xs = append(xs[1:])
+
+	return xs
+}

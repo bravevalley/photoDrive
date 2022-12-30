@@ -8,8 +8,9 @@
     {{$data := .}}
 </head>
 <body>
-    <h4>Here is your cookie - {{$data}} </h4>
-
+    {{range $value := $data}}
+        <img src="/assets/images/{{$value}}" alt="image_{{$value}}" width="400px" >
+    {{end}}
 
     <form action="" method="post" enctype="multipart/form-data" >
         <input type="file" name="upload" id="upload">
